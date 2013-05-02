@@ -4,12 +4,15 @@
 Summary:	Systems Management web application
 Name:		puppet-dashboard
 Version:	1.2.23
-Release:	0.1
+Release:	0.2
 License:	Apache v2.0
-Group:		Applications/System
-Source0:	http://yum.puppetlabs.com/sources/%{name}-%{version}.tar.gz
-# Source0-md5:	ff3e02c3ddc834459cbd1fb7f209a1eb
+Group:		Applications/WWW
+Source0:	https://downloads.puppetlabs.com/dashboard/%{name}-%{version}.tar.gz
+# Source0-md5:	e445194f1ac96946e6755cb94f21a1e5
 URL:		http://www.puppetlabs.com/
+BuildRequires:	rpmbuild(macros) >= 1.228
+Requires(post,preun):	/sbin/chkconfig
+Requires:	rc-scripts
 Requires:	ruby-mysql
 Requires:	ruby-rake
 Requires:	ruby-rubygems
